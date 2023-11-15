@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ec.mapper.TdGoodsInfoMapper">
+  <resultMap id="BaseResultMap" type="com.ec.entity.TdGoodsInfo">
+    <result column="GOODS_ID" jdbcType="VARCHAR" property="goodsId" />
+    <result column="GOODS_NAME" jdbcType="VARCHAR" property="goodsName" />
+    <result column="GOODS_DESC" jdbcType="VARCHAR" property="goodsDesc" />
+    <result column="GOODS_PRICE" jdbcType="DOUBLE" property="goodsPrice" />
+    <result column="INSERT_DT" jdbcType="DATE" property="insertDt" />
+    <result column="ONLINE_FLAG" jdbcType="VARCHAR" property="onlineFlag" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ec.entity.TdGoodsInfo">
+    insert into td_goods_info (GOODS_ID, GOODS_NAME, GOODS_DESC, 
+      GOODS_PRICE, INSERT_DT, ONLINE_FLAG
+      )
+    values (#{goodsId,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, #{goodsDesc,jdbcType=VARCHAR}, 
+      #{goodsPrice,jdbcType=DOUBLE}, #{insertDt,jdbcType=DATE}, #{onlineFlag,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ec.entity.TdGoodsInfo">
+    insert into td_goods_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsId != null">
+        GOODS_ID,
+      </if>
+      <if test="goodsName != null">
+        GOODS_NAME,
+      </if>
+      <if test="goodsDesc != null">
+        GOODS_DESC,
+      </if>
+      <if test="goodsPrice != null">
+        GOODS_PRICE,
+      </if>
+      <if test="insertDt != null">
+        INSERT_DT,
+      </if>
+      <if test="onlineFlag != null">
+        ONLINE_FLAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDesc != null">
+        #{goodsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="insertDt != null">
+        #{insertDt,jdbcType=DATE},
+      </if>
+      <if test="onlineFlag != null">
+        #{onlineFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

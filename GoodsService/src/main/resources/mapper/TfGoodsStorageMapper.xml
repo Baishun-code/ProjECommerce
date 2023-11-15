@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ec.mapper.TfGoodsStorageMapper">
+  <resultMap id="BaseResultMap" type="com.ec.entity.TfGoodsStorage">
+    <result column="GOODS_ID" jdbcType="VARCHAR" property="goodsId" />
+    <result column="GOODS_VOLUME" jdbcType="INTEGER" property="goodsVolume" />
+    <result column="VERSION_FLAG" jdbcType="INTEGER" property="versionFlag" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ec.entity.TfGoodsStorage">
+    insert into tf_goods_storage (GOODS_ID, GOODS_VOLUME, VERSION_FLAG
+      )
+    values (#{goodsId,jdbcType=VARCHAR}, #{goodsVolume,jdbcType=INTEGER}, #{versionFlag,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ec.entity.TfGoodsStorage">
+    insert into tf_goods_storage
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsId != null">
+        GOODS_ID,
+      </if>
+      <if test="goodsVolume != null">
+        GOODS_VOLUME,
+      </if>
+      <if test="versionFlag != null">
+        VERSION_FLAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsVolume != null">
+        #{goodsVolume,jdbcType=INTEGER},
+      </if>
+      <if test="versionFlag != null">
+        #{versionFlag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateGoodsInventory">
+    update tf_goods_storage
+       set GOODS_VOLUME = #{amt}, VERSION_FLAG = #{versionId} + 1
+     where GOODS_ID = #{goodsId}
+       and VERSION_FLAG = #{versionId}
+  </update>
+
+  <select id="queryRecordByGoodsId" resultType="com.ec.entity.TfGoodsStorage">
+    select *
+      from tf_goods_storage
+     where GOODS_ID = #{goodsId}
+  </select>
+</mapper>

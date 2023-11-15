@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistentConfig">
+    <option name="historyConfigList">
+      <map>
+        <entry key="td_goods_info">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="TdGoodsInfoMapper" />
+              <option name="daoPackage" value="com.ec.mapper" />
+              <option name="daoPostfix" value="Mapper" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="TdGoodsInfo" />
+              <option name="modelPackage" value="com.ec.entity" />
+              <option name="name" value="td_goods_info" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="td_goods_info" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="tf_goods_storage">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="TfGoodsStorageMapper" />
+              <option name="daoPackage" value="com.ec.mapper" />
+              <option name="daoPostfix" value="Mapper" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="TfGoodsStorage" />
+              <option name="modelPackage" value="com.ec.entity" />
+              <option name="name" value="tf_goods_storage" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="tf_goods_storage" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
+            </Config>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
